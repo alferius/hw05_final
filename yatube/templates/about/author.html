@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}<title>Об авторе проекта</title>{% endblock %}
+{% block content %}
+  <style>
+   .sign {
+    float: left; /* Выравнивание по правому краю */
+    border: 1px solid #333; /* Параметры рамки */
+    padding: 7px; /* Поля внутри блока */
+    margin: 10px 0 5px 5px; /* Отступы вокруг */
+    background: #f0f0f0; /* Цвет фона */ 
+   }
+   .sign figcaption {
+     margin: 0 auto 5px; /* Отступы вокруг абзаца */
+   }
+  </style>
+      <div class="container py-5"> 
+        <div class="row justify-content-center">
+          <div class="col-md-8 p-5">
+            <div class="card">
+              <div class="card-header">
+                Привет, я Alferius
+              </div>
+              <div class="card-body">
+                <p><img src="{% static 'img/alf.gif' %}" alt=""Это я""></p>
+                <hr>
+                <p>Моя страница на Гите</p>
+                <a href="https://github.com/alferius">Перейти</a>
+              </div> 
+            </div> 
+            <div class="card">
+              <div class="card-header">
+                Мои помощники
+              </div>
+              <div class="card-body">
+               <figure class="sign">
+                <p><img src="{% static 'img/serbi.jpg' %}" alt="<Британка Серби>"></p>
+                <figcaption><center>Британка Серби</center></figcaption>
+               </figure>
+               <figure class="sign">
+                <p><img src="{% static 'img/Vasilisa.jpg' %}" alt="<Дворянка Василиса>"></p>
+                <figcaption><center>Дворянка Василиса</center></figcaption>
+               </figure>
+               <hr>
+               <figure class="sign">
+                <p><img src="{% static 'img/Richard.jpg' %}" alt="<Чихуёнок Ричард>"></p>
+                <figcaption><center>Чихуёнок Ричард</center></figcaption>
+               </figure>
+              </div> 
+            </div> 
+          </div>
+        </div> 
+      </div>
+{% endblock %}
