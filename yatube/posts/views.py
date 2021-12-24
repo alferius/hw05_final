@@ -5,7 +5,7 @@ from django.urls import reverse
 
 from yatube.settings import POSTS_ON_THE_PAGES
 
-from .models import Comment, Follow, Group, Post, User
+from .models import Follow, Group, Post, User
 from posts.forms import CommentForm, PostForm
 
 
@@ -68,8 +68,6 @@ def add_comment(request, post_id):
 def post_detail(request, post_id):
     is_edit = False
     post = get_object_or_404(Post, id=post_id)
-    user = get_object_or_404(User, username=post.author)
-    comments = Comment.objects.filter(post=post_id)
     form = CommentForm(request.POST or None,)
     if request.method == 'POST':
         if form.is_valid():
@@ -84,12 +82,8 @@ def post_detail(request, post_id):
 
     if post.author == request.user:
         is_edit = True
-    posts_count = user.posts.all().count()
     context = {
-        'title': post.text[:30],
         'post': post,
-        'posts_count': posts_count,
-        'comments': comments,
         'form': form,
         'is_edit': is_edit,
     }

@@ -138,15 +138,6 @@ class PostViewsTest(TestCase):
             response.context['post'].text,
             'Тест, тест, тест', 'передаётся не тот текст статьи')
 
-        self.assertEqual(
-            response.context['title'],
-            response.context['post'].text[:30],
-            'передаётся не правильный заголовок')
-
-        self.assertEqual(
-            response.context['posts_count'],
-            15, 'передаётся не правильное количество статей')
-
         self.assertFalse(
             guest_response.context['is_edit'],
             'передаётся не правильный флаг редактирования')
