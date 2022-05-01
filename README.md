@@ -9,7 +9,7 @@ My first social network
 
 Python 3.8.8 64bit
 
-Jango 2.2.19
+Django 2.2.19
 
 ### Запуск проекта в dev-режиме
 
